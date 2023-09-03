@@ -1,0 +1,399 @@
+version: "3.1"
+#--------------
+intents:
+  - cgpa_improvement
+  - class_format_query
+  - course_administration
+  - course_limits_and_exceptions
+  - summer_term_conditions
+  - summer_term_timetable
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  #creative computing society
+  - ccs_Society
+  - Society_Purposeccs
+  - Workshops_Scheduleccs
+  - Society_Collaborationsccs
+  - Contact_Infoccs
+  - President_Infoccs
+  - VicePresident_Infoccs
+  - President_Emailccs
+  - VicePresident_Emailccs
+  - Society_Websiteccs
+#cognito
+  - cognito_Society
+  - Membership_Infocognito
+  - Contact_Infocognito
+  - President_Infocognito
+  - President_Emailcognito
+  - Join_Societycognito
+  - VicePresident_Infocognito
+  - VicePresident_Emailcognito
+  - Faculty_Advisors_Contact_Infocognito
+  - Fallback
+  #enactus
+  - enactus_Society
+  - ENACTUS_Purpose_Description
+  - ENACTUS_Contact_Information
+  - ENACTUS_Website
+  - ENACTUS_Faculty_Information
+  - ENACTUS_Projects_Initiatives
+  - ENACTUS_Events_Competitions
+  - ENACTUS_Success_Stories
+  - ENACTUS_Membership_Participation
+  - ENACTUS_Workshops_Training
+  - ENACTUS_Networking_Opportunities
+  #edc
+  - EDC_Purpose_Description
+  - EDC_Contact_Information
+  - EDC_Website
+  - EDC_Faculty_Information
+  - EDC_Projects_Initiatives
+  - EDC_Events_Competitions
+  - EDC_Membership_Enrollment
+  - EDC_Workshops_Training
+  - EDC_Networking_Opportunities
+  #frosh
+  - Frosh_Purpose_Description
+  - Frosh_Purpose_Details
+  - Frosh_Contribution_Integration
+  - Frosh_Activities
+  - Frosh_Transition_Support
+  - Frosh_Significance
+  - Frosh_Welcoming_Environment
+  - Frosh_Recent_Initiative
+  - Frosh_Impact
+  - Frosh_Values_Principles
+  - Frosh_Contact
+  - Frosh_Contact_Email
+  - Frosh_Contact_Individuals
+  - Frosh_Contact_Responsiveness
+  - Frosh_Contact_Updates
+  - Frosh_Contact_Website
+  - Frosh_Contact_Social_Media
+  - Frosh_Contact_Initiate
+  - Frosh_Contact_Upcoming_Events
+  - Frosh_Contact_Best_Way
+  - Frosh_Faculty_Members
+  - Frosh_Faculty_Roles
+  - Frosh_Faculty_Contribution
+  - Frosh_Faculty_Active
+ ##faps
+  - FAPS_Purpose_Description
+  - FAPS_Contact
+  - FAPS_Faculty_Information
+  - FAPS_Events_Workshops
+  - FAPS_Networking_Collaborations
+  - FAPS_Membership_Participation
+  - FAPS_Future_Plans_Vision
+entities:
+- cgpa
+- grade
+- course_count
+- term_detail
+- financial_detail
+- role
+- schedule
+- fees
+- conditions
+
+slots:
+  grade:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: grade
+  course_count:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: course_count
+  term_detail:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: term_detail
+  financial_detail:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: financial_detail
+  role:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: role
+  schedule:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: schedule
+  fees:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: fees
+
+
+responses:
+  utter_summer_term_conditions:
+  - text: The summer term offers backlog courses for final year students with 'E', 'F', or 'X' grades or those admitted in December, limited to three courses, provided there's faculty availability. DoAA has authority to make course allotments. For students with less than four members in a course, it's offered as a self-study, unless they have 'F' or 'X' grades. The schedule, fees, and other conditions are subject to Chairperson, Senate's approval, based on DoAA's recommendations.
+  - text: In the summer term, final year students with certain grades or those admitted in December can take up to three backlog courses. If conditions permit, the DoAA can assign up to four courses. Self-study courses are an option if less than four students enroll, but not for 'F' or 'X' graded students. The summer term's details depend on the Chairperson, Senate's decisions.
+  - text: Final year students securing grades 'E', 'F', or 'X' can enroll in up to three backlog courses in summer, subject to faculty availability. The DoAA can, in specific cases, assign up to four courses. If a course has less than four students, it's self-study unless you have an 'F' or 'X' grade. All summer term decisions, including schedule and fees, are under the Chairperson, Senate's jurisdiction.
+  - text: Summer term allows final year students with specific grades or those admitted in December to take a maximum of three backlog courses. Under certain conditions, the DoAA can allocate up to four courses. Courses with fewer than four students are self-study, but exceptions exist for 'F' and 'X' grades. The Chairperson, Senate approves the term's conditions.
+  utter_cgpa_improvement:
+  - text: If you aim to improve your CGPA, the summer term is an option. Subjects in which you've scored C or C- can be retaken for better grades. However, this is contingent on the availability of faculty. All decisions regarding course allocation for improvement are made by DoAA.
+  - text: Improving your CGPA is possible during the summer term. You can opt to improve in subjects where you've secured C or C-, but this is subject to faculty availability. The final decision on course allotments for CGPA improvement is taken by the DoAA.
+ #classes
+  utter_class_format_info:
+  - text: Regular classes during the summer term are held if there are enough enrollments. A minimum of four students are required for a regular class. If there are fewer than four students enrolled in a course, it's offered as a self-study. However, students with grades like {grade} aren't allowed to take self-study courses in the summer term.An instructor will be appointed and all components of evaluation will be completed in each case.
+  - text: For a regular class in the summer term, we need at least four students. Courses with fewer students are switched to self-study, but this isn't applicable for students with {grade} grades.
+  - text: "Summer term has a criterion: regular classes need at least four students. If enrollments are lower, the class is given as self-study. But, students with {grade} grades can't opt for self-study."
+  utter_course_limits_and_exceptions:
+  - text: During the summer term, final year students with 'E', 'F', or 'X' grades, as well as those admitted in December, are eligible to enroll in up to three backlog courses. In specific cases, the DoAA has the authority to assign up to four courses. If a course has fewer than four students, it's offered as a self-study course, with the exception of students with 'F' or 'X' grades.
+  - text: In the context of the summer term, there are course limits and exceptions. Final year students with grades 'E', 'F', or 'X', and students admitted in December, can opt for a maximum of three backlog courses. However, there are instances where the DoAA may permit up to four courses. If a course's enrollment falls below four students, it transitions to self-study, except for those with 'F' or 'X' grades.
+  - text: For the summer term, certain course limits and exceptions apply. Students in their final year with 'E', 'F', or 'X' grades, and those admitted in December, can take a maximum of three backlog courses. The DoAA holds the discretion to allocate up to four courses under specific circumstances. Courses with less than four students are conducted as self-study, excluding students with 'F' or 'X' grades.
+  - text: The summer term has specific course limits and exceptions. Final year students with 'E', 'F', or 'X' grades, as well as students admitted in December, have the opportunity to enroll in up to three backlog courses. In exceptional situations, the DoAA can assign up to four courses. If a course's enrollment is less than four students, it's offered as self-study, except for students with 'F' or 'X' grades.
+  utter_course_administration:
+  - text: The summer term schedule and fees are approved by the Chairperson, Senate based on the DoAA's recommendations. The conditions for the summer term are recommended by the DoAA. The final decision in running summer term courses is made by the Senate. Instructors in a self-study course primarily guide and provide necessary resources to the students but don't conduct regular classes.
+  - text: The approval of the summer term schedule and fees rests with the Chairperson, Senate, acting on the recommendations of the DoAA. The DoAA is responsible for suggesting the conditions of the summer term. The ultimate authority in the operation of summer term courses lies with the Senate. In self-study courses, instructors play a role in guiding and supporting students without holding traditional classes.
+  - text: The Chairperson, Senate approves the schedule and fees for the summer term based on the DoAA's recommendations. The conditions for the summer term are suggested by the DoAA. The ultimate decision-making power in running summer term courses is held by the Senate. Instructors of self-study courses serve as guides and providers of resources rather than conducting regular classes.
+  - text: The approval of the summer term's schedule and fees is within the purview of the Chairperson, Senate, who consider the DoAA's recommendations. The DoAA puts forward the recommended conditions for the summer term. The final say in the operation of summer courses rests with the Senate. Instructors in self-study courses focus on guiding students and offering resources instead of delivering conventional lectures.
+  - text: The Chairperson, Senate is responsible for approving the summer term schedule and fees, taking into account the recommendations of the DoAA. The DoAA recommends the conditions for the summer term. The ultimate authority for managing summer courses lies with the Senate. In self-study courses, instructors play a supportive role by guiding students and providing resources.
+  utter_summer_term_timetable:
+  - text: Follow this link to order to Get the Time Table.[to be updated]
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+ # ccs 
+  utter_Society_Infoccs:
+  - text: "The Creative Computing Society encourages students to develop analytical skills in technology and innovation. They conduct workshops, coding competitions, and collaborate with organizations like Google Developers Group, Women Techmaker, Mozilla Webmaker, and PyData."
+  utter_Society_Purposeccs:
+  - text: "The purpose of Creative Computing Society is to foster an analytical temperament in the field of technology and innovation. They provide a platform for students to showcase and nurture their technical skills."
+  utter_Workshops_Scheduleccs:
+  - text: "Creative Computing Society conducts workshops on a regular basis to help students enhance their technical skills."
+  utter_Society_Collaborationsccs:
+  - text: "Creative Computing Society has collaborated with various organizations such as Google Developers Group, Women Techmaker, Mozilla Webmaker, and PyData."
+  utter_Contact_Infoccs:
+  - text: "You can contact Creative Computing Society by emailing ccs@thapar.edu."
+  utter_President_Infoccs:
+  - text: "The president of Creative Computing Society is Dr. Anju Bala, an Assistant Professor in CSED."
+  utter_VicePresident_Infoccs:
+  - text: "The vice president of Creative Computing Society is Dr. Gurpal Singh, an Assistant Professor in CSED."
+  utter_President_Emailccs:
+  - text: "Dr. Anju Bala's email address is anjubala@thapar.edu."
+  utter_VicePresident_Emailccs:
+  - text: "Dr. Gurpal Singh's email address is gurpal.singh@thapar.edu."
+  utter_Society_Websiteccs:
+  - text: "You can find more information on the Creative Computing Society website i.e https://ccstiet.com/"
+
+
+
+# cognito 
+  utter_Society_Infocognito:
+  - text: "Cogito is the Philosophy Society run by students of the School of Liberal Arts and Science, TIET. The mission is to promote the disseminatioof Philosophy by organizing public debates, talks, and social events. The study of Philosophy is of outmost importance for the development effective thinking and logical capacities, the enhancement of cross-domain conceptual understanding and problem-solving, and the cultivation ointellectual freedom and curiosity. They welcome anyone, from any discipline, and  provide a safe and stimulating space for discussion."
+  utter_Membership_Infocognito:
+  - text: "To become a member of Cogito, simply fill out the membership form on our website. Membership is open to all students from any discipline. There are no membership fees. As a member, you'll have access to our events, discussions, and resources. Join and explore the world of philosophy! and for info visit website"
+  utter_Contact_Infocognito:
+  - text: "You can contact Cogito through email at cogito@thapar.edu. You can also find more information on their website i.e. cogito@thapar.edu"
+  utter_Join_Societycognito:
+  - text: "There are time to time opening to join the community i.e. recruitment process .For more info visit the website  i.e cogito@thapar.edu"
+  utter_President_cognito:
+  - text: "The  President of the society is Dr. Andrea Raimondi, Assistant Professor, TSLAS,"
+  utter_VicePresident_cognito:
+  - text: "The vice president is Dr. Ipshita Chowdhury,Assistant Professor,TSLAS,"
+  utter_President_Emailcognito:
+  - text: "Dr. Andrea Raimondi's email address is andrea.raimondi@thapar.edu."
+  utter_VicePresident_Emailcognito:
+  - text: "Dr. Ipshita Chowdhury's email address is ipshita.chowdhury@thapar.edu."
+  utter_Faculty_Advisors_Contact_Infocognito:
+  - text: "The faculty members associated with Cogito are Dr. Andrea Raimondi (andrea.raimondi@thapar.edu) and Dr. Ipshita Chowdhury."
+  utter_Fallback:
+  - text: "I'm sorry, but I couldn't find the information you're looking for at the moment. Please try again later."
+
+#enactus
+  utter_ENACTUS_Purpose_Description:
+  - text: "The main objective of ENACTUS is to empower students to create positive social impact through entrepreneurial action."
+  utter_ENACTUS_Contact_Information:
+  - text: "For inquiries, you can contact ENACTUS through their official email address or reach out to their team members."
+  utter_ENACTUS_Website:
+  - text: "You can find more information about ENACTUS's activities on their official website."
+  utter_ENACTUS_Faculty_Information:
+  - text: "ENACTUS is supported by a dedicated team of faculty members who contribute their expertise to guide and mentor students."
+  utter_ENACTUS_Projects_Initiatives:
+  - text: "ENACTUS undertakes projects that address diverse issues, leveraging entrepreneurial action for sustainable solutions."
+  utter_ENACTUS_Events_Competitions:
+  - text: "ENACTUS organizes various annual events and competitions that provide students with opportunities to showcase their entrepreneurial and innovative projects."
+  utter_ENACTUS_Success_Stories:
+  - text: "ENACTUS has positively influenced students by providing them with practical skills, mentorship, and opportunities that empower them to become successful changemakers."
+  utter_ENACTUS_Membership_Participation:
+  - text: "Any student with a passion for social entrepreneurship and making a positive impact can become a member of ENACTUS."
+  utter_ENACTUS_Workshops_Training:
+  - text: "ENACTUS regularly conducts workshops and training sessions to enhance students' entrepreneurial and leadership skills."
+  utter_ENACTUS_Networking_Opportunities:
+  - text: "Attending ENACTUS's networking sessions allows students to expand their professional network, learn from industry experts, and explore potential career opportunities."
+  utter_Society_Infoenactus:
+  - text: ENACTUS society empowers students to create positive social impact through entrepreneurial action.ENACTUS organizes various annual events and competitions that provide students with opportunities to showcase their entrepreneurial and innovative projects.
+
+##edc
+  utter_EDC_Purpose_Description:
+  - text: "The primary goal of Entrepreneurship Development Cell (EDC) is to develop the spirit of entrepreneurship among the students of Thapar Institute of Engineering and Technology. EDC aims to foster an entrepreneurial spirit among students by offering support, resources, and initiatives that nurture innovation and startup ideas."
+
+  utter_EDC_Contact_Information:
+  - text: "You can reach out to EDC by sending an email to edc@thapar.edu. For inquiries, you can contact EDC at edc@thapar.edu. Email is the preferred method of communication for connecting with EDC representatives."
+
+  utter_EDC_Website:
+  - text: "You can find detailed information about EDC on their official website at https://sites.google.com/thapar.edu/edctiet. EDC's website features information about their workshops, events, mentorship programs, success stories, and resources aimed at fostering entrepreneurship."
+
+  utter_EDC_Faculty_Information:
+  - text: "Faculty members associated with EDC include Dr. M.D. Singh and Dr. Vineet Srivastava. Dr. M.D. Singh is an Assistant Professor and contributes to EDC's activities by providing mentorship and guidance. Dr. Vineet Srivastava, an Assistant Professor, plays a significant role in EDC by mentoring students and supporting their entrepreneurial endeavors."
+
+  utter_EDC_Projects_Initiatives:
+  - text: "EDC has undertaken projects such as [Project 1], [Project 2], and [Project 3], which focus on fostering student innovation and entrepreneurial growth. EDC projects provide students with hands-on experience, allowing them to develop problem-solving skills, creativity, and an entrepreneurial mindset essential for startups."
+
+  utter_EDC_Events_Competitions:
+  - text: "Yes, EDC hosts various annual events and competitions aimed at fostering an entrepreneurial ecosystem. EDC's signature events include [Event 1], [Event 2], and [Event 3], which offer students opportunities to showcase their innovative ideas."
+
+  utter_EDC_Membership_Enrollment:
+  - text: "EDC membership is typically open to all students of Thapar Institute of Engineering and Technology who are interested in entrepreneurship. There are usually no specific prerequisites to become a member of EDC, as long as you have a genuine interest in entrepreneurship. EDC offers workshops, mentorship programs, networking events, and resources that support their entrepreneurial journey."
+
+  utter_EDC_Workshops_Training:
+  - text: "Yes, EDC frequently organizes workshops and training sessions to enhance students' entrepreneurial skills. EDC's workshops cover various topics including idea generation, business planning, marketing strategies, funding, and startup management."
+
+  utter_EDC_Networking_Opportunities:
+  - text: "Yes, EDC organizes networking events to facilitate connections between students and established entrepreneurs. EDC's networking events provide students with opportunities to meet successful entrepreneurs, industry professionals, and potential collaborators."
+
+#frosh
+  utter_Frosh_Purpose_Description:
+  - text: The main purpose of the Frosh Week Society at Thapar Institute is to welcome and integrate new students into the institute community through orientation programs and events.
+
+  utter_Frosh_Purpose_Details:
+  - text: The Frosh Week Society organizes various activities and events aimed at helping new students transition smoothly into Thapar Institute. It fosters a sense of belonging among students.
+
+  utter_Frosh_Contribution_Integration:
+  - text: The Frosh Week Society contributes to the integration of new students by facilitating interactions, organizing orientation events, and creating opportunities for students to connect with their peers.
+
+  utter_Frosh_Activities:
+  - text: The Frosh Week Society organizes a range of activities for incoming students, including orientation programs, ice-breaker sessions, information desks, and community-building activities.
+
+  utter_Frosh_Transition_Support:
+  - text: Frosh Week Society provides a supportive environment, informative sessions, and interactive events to help new students adapt to campus life and transition smoothly into the institute.
+
+  utter_Frosh_Significance:
+  - text: Frosh Week is significant as it eases the transition of new students, fosters connections, and sets the tone for a positive college experience.
+
+  utter_Frosh_Welcoming_Environment:
+  - text: The Frosh Week Society creates a welcoming environment for first-year students by planning events that encourage inclusivity, networking, and engagement, making them feel welcome.
+
+  utter_Frosh_Recent_Initiative:
+  - text: A recent initiative by the Frosh Week Society involved organizing a campus tour and orientation program for new students to help them become familiar with the campus.
+
+  utter_Frosh_Impact:
+  - text: Frosh Week Society's initiatives have positively impacted new students by helping them build friendships, navigate campus resources, and feel part of the institute community.
+
+  utter_Frosh_Values_Principles:
+  - text: Frosh Week Society is guided by principles of inclusivity, support, information-sharing, and creating a positive atmosphere for new students.
+
+  utter_Frosh_Contact:
+  - text: You can get in touch with the Frosh Week Society at Thapar Institute by emailing them at frosh@thapar.edu.
+
+  utter_Frosh_Contact_Email:
+  - text: The official email address to contact the Frosh Week Society is frosh@thapar.edu.
+
+  utter_Frosh_Contact_Individuals:
+  - text: Yes, Dr. M.D. Singh, Dr. Jaskaran Singh, Dr. Tarunpreet Bhatia, Dr. Devender Kumar, and Dr. Hem Dutt Joshi are points of contact for Frosh Week inquiries.
+
+  utter_Frosh_Contact_Responsiveness:
+  - text: The Frosh Week Society aims to respond promptly to messages and inquiries from students and interested individuals.
+
+  utter_Frosh_Contact_Updates:
+  - text: You can find updates and information about Frosh Week Society's activities on their official website and social media channels.
+
+  utter_Frosh_Contact_Website:
+  - text: Yes, Frosh Week Society has an official website where you can find information about their upcoming events and programs.
+
+  utter_Frosh_Contact_Social_Media:
+  - text: Yes, Frosh Week Society is active on social media platforms such as Facebook, Instagram, and Twitter.
+
+  utter_Frosh_Contact_Initiate:
+  - text: Students can initiate contact by sending an email to the provided email address or by reaching out through the official website and social media channels.
+
+  utter_Frosh_Contact_Upcoming_Events:
+  - text: Yes, Frosh Week Society regularly organizes orientation programs and events for incoming students. You can find details on their website.
+
+  utter_Frosh_Contact_Best_Way:
+  - text: The best way to reach out to the Frosh Week Society is by sending an email to the provided email address or by visiting their official website for more information.
+
+  utter_Frosh_Faculty_Members:
+  - text: Faculty members associated with the organization of the Frosh Week Society include Dr. M.D. Singh, Dr. Jaskaran Singh, Dr. Tarunpreet Bhatia, Dr. Devender Kumar, and Dr. Hem Dutt Joshi.
+
+  utter_Frosh_Faculty_Roles:
+  - text: Dr. M.D. Singh, Dr. Jaskaran Singh, Dr. Tarunpreet Bhatia, Dr. Devender Kumar, and Dr. Hem Dutt Joshi are actively involved in planning and executing Frosh Week activities.
+
+  utter_Frosh_Faculty_Contribution:
+  - text: These faculty members provide guidance, support, and coordination for various Frosh Week events and initiatives.
+
+  utter_Frosh_Faculty_Active:
+  - text: Yes, the faculty members actively participate in organizing and overseeing Frosh Week events and programs.
+
+  #faps
+  utter_FAPS_Purpose_Description:
+  - text: "The primary objective of the Fine Arts and Photography Society (FAPS) is to encourage students to express themselves through art and photography. FAPS fosters creativity and collaboration among the student community by organizing workshops on art forms like Sketching, Painting, Photography, Calligraphy, and Photoshop."
+
+  utter_FAPS_Contact:
+  - text: "You can get in touch with FAPS by sending an email to faps@thapar.edu."
+
+  utter_FAPS_Faculty_Information:
+  - text: "The faculty members associated with FAPS include Dr. Ashima Singh and Dr. Vikas Sharma. They provide guidance and support for FAPS's artistic projects."
+
+  utter_FAPS_Events_Workshops:
+  - text: "FAPS organizes regular events and workshops for its members to engage in artistic activities. Some notable events and workshops include art exhibitions, photography contests, creative workshops, and more."
+
+  utter_FAPS_Networking_Collaborations:
+  - text: "Yes, FAPS actively collaborates with other student societies and organizations on campus to promote creativity and artistic expression. FAPS has also established partnerships and collaborations with external organizations, artists, and creative professionals to enrich its artistic initiatives."
+
+  utter_FAPS_Membership_Participation:
+  - text: "All students at Thapar Institute are eligible to become members of FAPS, regardless of their artistic background. There are no specific qualifications or prerequisites for joining FAPS as a member. Interested students can usually apply by filling out an online form or by attending FAPS's membership drive events. Members enjoy access to workshops, events, networking opportunities, artistic resources, and a supportive creative community."
+
+  utter_FAPS_Future_Plans_Vision:
+  - text: "FAPS aims to expand its artistic offerings, collaborate with more partners, and create a vibrant creative hub for students. The vision for the next few years involves becoming a leading platform for students to explore, express, and refine their artistic talents. FAPS envisions itself as a catalyst for artistic growth, providing students with a platform to freely express themselves. Exciting projects on the horizon include launching an interactive online gallery showcasing student artwork and collaborating with local artists."
+actions:
+- utter_summer_term_conditions
+- utter_class_format_info
+- utter_cgpa_improvement
+- utter_course_limits_and_exceptions
+- utter_course_administration
+- utter_summer_term_timetable
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+

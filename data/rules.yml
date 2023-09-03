@@ -1,0 +1,374 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+  # ccs society number 1
+- rule: Respond to Society Info CCS
+  steps:
+  - intent: ccs_Society
+  - action: utter_Society_Infoccs
+
+- rule: Respond to Society Purpose CCS
+  steps:
+  - intent: Society_Purposeccs
+  - action: utter_Society_Purposeccs
+ 
+- rule: Respond to Workshops Schedule CCS
+  steps:
+  - intent: Workshops_Scheduleccs
+  - action: utter_Workshops_Scheduleccs
+
+- rule: Respond to Society Collaborations CCS
+  steps:
+  - intent: Society_Collaborationsccs
+  - action: utter_Society_Collaborationsccs
+
+- rule: Respond to Contact Info CCS
+  steps:
+  - intent: Contact_Infoccs
+  - action: utter_Contact_Infoccs
+
+- rule: Respond to President Info CCS
+  steps:
+  - intent: President_Infoccs
+  - action: utter_President_Infoccs
+
+- rule: Respond to Vice President Info CCS
+  steps:
+  - intent: VicePresident_Infoccs
+  - action: utter_VicePresident_Infoccs
+
+- rule: Respond to President Email CCS
+  steps:
+  - intent: President_Emailccs
+  - action: utter_President_Emailccs
+
+- rule: Respond to Vice President Email CCS
+  steps:
+  - intent: VicePresident_Emailccs
+  - action: utter_VicePresident_Emailccs
+
+- rule: Respond to Society Website CCS
+  steps:
+  - intent: Society_Websiteccs
+  - action: utter_Society_Websiteccs
+
+
+#--cognito
+- rule: Respond to Society Info COGNITO
+  steps:
+  - intent: cognito_Society
+  - action: utter_Society_Infocognito
+
+
+
+- rule: Respond to Membership Schedule COGNITO
+  steps:
+  - intent: Membership_Infocognito
+  - action: utter_Membership_Infocognito
+
+- rule: Respond to Society Contact COGNITO
+  steps:
+  - intent: Contact_Infocognito
+  - action: utter_Contact_Infocognito
+
+- rule: Respond to Joining Info COGNITO
+  steps:
+  - intent: Join_Societycognito
+  - action: utter_Join_Societycognito
+
+- rule: Respond to President Info COGNITO
+  steps:
+  - intent: President_Infocognito
+  - action: utter_President_cognito
+
+- rule: Respond to Vice President Info COGNITO
+  steps:
+  - intent: VicePresident_Infocognito
+  - action: utter_VicePresident_cognito
+
+
+- rule: Respond to Presidentemail Info COGNITO
+  steps:
+  - intent: President_Emailcognito
+  - action: utter_President_Emailcognito
+
+- rule: Respond to Vice Presidentemail Info COGNITO
+  steps:
+  - intent: VicePresident_Emailcognito
+  - action: utter_VicePresident_Emailcognito
+
+- rule: Respond to faculty cognito Info
+  steps:
+  - intent: Faculty_Advisors_Contact_Infocognito
+  - action: utter_Faculty_Advisors_Contact_Infocognito
+- rule: Respond to fallback
+  steps:
+  - intent: Fallback 
+  - action: utter_Fallback
+
+#society 3 enactus
+- rule: Respond to Society Info Inquiry ENACTUS
+  steps:
+  - intent: enactus_Society
+  - action: utter_Society_Infoenactus
+
+- rule: Respond to ENACTUS Purpose and Description Inquiry
+  steps:
+  - intent: ENACTUS_Purpose_Description
+  - action: utter_ENACTUS_Purpose_Description
+
+- rule: Respond to ENACTUS Contact Information Inquiry
+  steps:
+  - intent: ENACTUS_Contact_Information
+  - action: utter_ENACTUS_Contact_Information
+
+- rule: Respond to ENACTUS Website Inquiry
+  steps:
+  - intent: ENACTUS_Website
+  - action: utter_ENACTUS_Website
+
+- rule: Respond to ENACTUS Faculty Information Inquiry
+  steps:
+  - intent: ENACTUS_Faculty_Information
+  - action: utter_ENACTUS_Faculty_Information
+
+- rule: Respond to ENACTUS Projects and Initiatives Inquiry
+  steps:
+  - intent: ENACTUS_Projects_Initiatives
+  - action: utter_ENACTUS_Projects_Initiatives
+
+- rule: Respond to ENACTUS Events and Competitions Inquiry
+  steps:
+  - intent: ENACTUS_Events_Competitions
+  - action: utter_ENACTUS_Events_Competitions
+
+- rule: Respond to ENACTUS Success Stories Inquiry
+  steps:
+  - intent: ENACTUS_Success_Stories
+  - action: utter_ENACTUS_Success_Stories
+
+- rule: Respond to ENACTUS Membership and Participation Inquiry
+  steps:
+  - intent: ENACTUS_Membership_Participation
+  - action: utter_ENACTUS_Membership_Participation
+
+- rule: Respond to ENACTUS Workshops and Training Inquiry
+  steps:
+  - intent: ENACTUS_Workshops_Training
+  - action: utter_ENACTUS_Workshops_Training
+
+- rule: Respond to ENACTUS Networking Opportunities Inquiry
+  steps:
+  - intent: ENACTUS_Networking_Opportunities
+  - action: utter_ENACTUS_Networking_Opportunities
+
+
+#society 4
+
+- rule: Respond to EDC Purpose and Description
+  steps:
+  - intent: EDC_Purpose_Description
+  - action: utter_EDC_Purpose_Description
+
+- rule: Respond to EDC Contact Information
+  steps:
+  - intent: EDC_Contact_Information
+  - action: utter_EDC_Contact_Information
+
+- rule: Respond to EDC Website
+  steps:
+  - intent: EDC_Website
+  - action: utter_EDC_Website
+
+- rule: Respond to EDC Faculty Information
+  steps:
+  - intent: EDC_Faculty_Information
+  - action: utter_EDC_Faculty_Information
+
+- rule: Respond to EDC Projects and Initiatives
+  steps:
+  - intent: EDC_Projects_Initiatives
+  - action: utter_EDC_Projects_Initiatives
+
+- rule: Respond to EDC Events and Competitions
+  steps:
+  - intent: EDC_Events_Competitions
+  - action: utter_EDC_Events_Competitions
+
+- rule: Respond to EDC Membership and Enrollment
+  steps:
+  - intent: EDC_Membership_Enrollment
+  - action: utter_EDC_Membership_Enrollment
+
+- rule: Respond to EDC Workshops and Training
+  steps:
+  - intent: EDC_Workshops_Training
+  - action: utter_EDC_Workshops_Training
+
+- rule: Respond to EDC Networking Opportunities
+  steps:
+  - intent: EDC_Networking_Opportunities
+  - action: utter_EDC_Networking_Opportunities
+
+#society 5
+- rule: Respond to the purpose and description of Frosh Week Society
+  steps:
+  - intent: Frosh_Purpose_Description
+  - action: utter_Frosh_Purpose_Description
+
+- rule: Respond to more details about the role and objectives
+  steps:
+  - intent: Frosh_Purpose_Details
+  - action: utter_Frosh_Purpose_Details
+
+- rule: Explain how Frosh Week Society contributes to integration
+  steps:
+  - intent: Frosh_Contribution_Integration
+  - action: utter_Frosh_Contribution_Integration
+
+- rule: Provide information about the activities organized by Frosh Week Society
+  steps:
+  - intent: Frosh_Activities
+  - action: utter_Frosh_Activities
+
+- rule: Explain how Frosh Week Society helps in transition
+  steps:
+  - intent: Frosh_Transition_Support
+  - action: utter_Frosh_Transition_Support
+
+- rule: Highlight the significance of Frosh Week
+  steps:
+  - intent: Frosh_Significance
+  - action: utter_Frosh_Significance
+
+- rule: Describe how Frosh Week Society creates a welcoming environment
+  steps:
+  - intent: Frosh_Welcoming_Environment
+  - action: utter_Frosh_Welcoming_Environment
+
+- rule: Share an example of a recent initiative by Frosh Week Society
+  steps:
+  - intent: Frosh_Recent_Initiative
+  - action: utter_Frosh_Recent_Initiative
+
+- rule: Explain how Frosh Week Society positively impacts new students
+  steps:
+  - intent: Frosh_Impact
+  - action: utter_Frosh_Impact
+
+- rule: Describe the values and principles guiding Frosh Week Society
+  steps:
+  - intent: Frosh_Values_Principles
+  - action: utter_Frosh_Values_Principles
+
+- rule: Provide contact information for Frosh Week Society
+  steps:
+  - intent: Frosh_Contact
+  - action: utter_Frosh_Contact
+
+- rule: Respond with the official email address for contacting Frosh Week Society
+  steps:
+  - intent: Frosh_Contact_Email
+  - action: utter_Frosh_Contact_Email
+
+# Add more rules for different intents as needed.
+
+#society 6 faps
+- rule: Respond to FAPS Purpose and Description
+  steps:
+  - intent: FAPS_Purpose_Description
+  - action: utter_FAPS_Purpose_Description
+
+- rule: Respond to FAPS Contact Information
+  steps:
+  - intent: FAPS_Contact
+  - action: utter_FAPS_Contact
+
+- rule: Respond to FAPS Faculty Information
+  steps:
+  - intent: FAPS_Faculty_Information
+  - action: utter_FAPS_Faculty_Information
+
+- rule: Respond to FAPS Events and Workshops
+  steps:
+  - intent: FAPS_Events_Workshops
+  - action: utter_FAPS_Events_Workshops
+
+- rule: Respond to FAPS Networking and Collaborations
+  steps:
+  - intent: FAPS_Networking_Collaborations
+  - action: utter_FAPS_Networking_Collaborations
+
+- rule: Respond to FAPS Membership and Participation
+  steps:
+  - intent: FAPS_Membership_Participation
+  - action: utter_FAPS_Membership_Participation
+
+- rule: Respond to FAPS Future Plans and Vision
+  steps:
+  - intent: FAPS_Future_Plans_Vision
+  - action: utter_FAPS_Future_Plans_Vision
+
+- rule: Fallback Rule
+  steps:
+  - action: utter_default
+#society 7
+
+- rule: Provide information on summer term conditions
+  steps:
+  - intent: summer_term_conditions
+  - action: utter_summer_term_conditions
+
+- rule: Provide information on CGPA improvement in summer term
+  steps:
+  - intent: cgpa_improvement
+  - action: utter_cgpa_improvement
+
+# Additional rule if the grade entity is detected with summer_term_conditions intent
+- rule: Response to summer term conditions based on grade
+  condition:
+  - slot_was_set:
+      - grade: any  # Matches any value for grade
+  steps:
+  - intent: summer_term_conditions
+  - action: utter_summer_term_conditions
+
+# Additional rule if the course_count entity is detected with cgpa_improvement intent
+- rule: Response to CGPA improvement based on number of courses
+  condition:
+  - slot_was_set:
+      - course_count: any  # Matches any value for course_count
+  steps:
+  - intent: cgpa_improvement
+  - action: utter_cgpa_improvement
+  
+- rule: Respond to course limits and exceptions queries
+  steps:
+  - intent: course_limits_and_exceptions
+  - action: utter_course_limits_and_exceptions
+
+- rule: Provide information about class format
+  steps:
+  - intent: class_format_query
+  - action: utter_class_format_info
+
+- rule: Provide information about course administration
+  steps:
+  - intent: course_administration
+  - action: utter_course_administration
+
+- rule: Providing time table link to the students
+  steps:
+  - intent: summer_term_timetable
+  - action: utter_summer_term_timetable

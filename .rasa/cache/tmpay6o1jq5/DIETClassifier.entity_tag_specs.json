@@ -1,0 +1,52 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-backlog_number",
+      "2": "I-backlog_number",
+      "3": "L-backlog_number",
+      "4": "U-backlog_number",
+      "5": "B-cgpa",
+      "6": "I-cgpa",
+      "7": "L-cgpa",
+      "8": "U-cgpa",
+      "9": "B-course_count",
+      "10": "I-course_count",
+      "11": "L-course_count",
+      "12": "U-course_count",
+      "13": "B-entity",
+      "14": "I-entity",
+      "15": "L-entity",
+      "16": "U-entity",
+      "17": "B-grade",
+      "18": "I-grade",
+      "19": "L-grade",
+      "20": "U-grade",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-backlog_number": 1,
+      "I-backlog_number": 2,
+      "L-backlog_number": 3,
+      "U-backlog_number": 4,
+      "B-cgpa": 5,
+      "I-cgpa": 6,
+      "L-cgpa": 7,
+      "U-cgpa": 8,
+      "B-course_count": 9,
+      "I-course_count": 10,
+      "L-course_count": 11,
+      "U-course_count": 12,
+      "B-entity": 13,
+      "I-entity": 14,
+      "L-entity": 15,
+      "U-entity": 16,
+      "B-grade": 17,
+      "I-grade": 18,
+      "L-grade": 19,
+      "U-grade": 20,
+      "O": 0
+    },
+    "num_tags": 21
+  }
+]
